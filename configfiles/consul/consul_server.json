@@ -1,0 +1,18 @@
+{
+"bind_addr" :"172.31.18.130",
+
+"node_name" : "server",
+"ports": {
+        "http": 8500,
+	"dns": 8600
+
+    },
+"server": true,
+"bootstrap_expect":2,
+"datacenter": "dc1",
+"data_dir": "/etc/consul.d/data",
+"disable_remote_exec":false,
+"telemetry":{
+"statsd_address" : "52.66.108.235:8125"
+}
+}
