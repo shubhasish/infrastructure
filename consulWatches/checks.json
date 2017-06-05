@@ -1,0 +1,28 @@
+{"checks":[{
+"id":"HttpCheck",
+"service_id":"CMP-Grafana",
+"name":"HttpCheck",
+"http":"http://127.0.0.1:3000/",
+"interval":"20s",
+"timeout":"20s"
+}
+,{
+"id":"Ping",
+"name":"Ping",
+"service_id":"CMP-Influxdb",
+"http":"http://127.0.0.1:8086/ping",
+"interval":"20s",
+"timeout":"20s"
+},{
+"id":"Admin Interface",
+"name":"Admin Interface",
+"service_id":"CMP-Influxdb",
+"http":"http://127.0.0.1:8083",
+"interval":"20s",
+"timeout":"20s"},
+{"id":"health_Check",
+"name": "health",
+"script": "ping -c1 localhost >/dev/null", 
+"interval": "10s"}
+]}
+

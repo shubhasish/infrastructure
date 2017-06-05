@@ -1,0 +1,15 @@
+{
+"services": [{
+"id":"CMP-Grafana",
+"name":"grafana",
+"address":"",
+"port":3000,
+"tags":["grafana","monitoring-pipeline"]
+},{
+"id":"CMP-Influxdb",
+"name":"influxdb",
+"address":"",
+"port":8086,
+"tags":["influxdb","monitoring-pipeline"]
+}]
+}

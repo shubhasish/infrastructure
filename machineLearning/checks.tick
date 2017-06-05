@@ -1,0 +1,7 @@
+var nodes = stream
+        |from()
+            .database('checks')
+            .measurement('checks')
+	|alert
+	    .crit(lambda: "critical" != 'None')
+	    .message('{{ index .Fields "critical" }} of {{ index .Fields "service" }} on node {{ index .Fields "address" }} is  {{ .Level}}')
