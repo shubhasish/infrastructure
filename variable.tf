@@ -1,6 +1,10 @@
 variable "keyPath"{
 default = "/home/talentica/Downloads/drive-download-20170513T171142Z-001/linux3.pem"}
 
+
+variable "homeDir" {
+default = ""
+}
 variable "region" {
 default = "ap-south-1" }
 

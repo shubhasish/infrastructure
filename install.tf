@@ -63,3 +63,16 @@ subnet_id = "${module.security.private}"
 security_group = "${module.security.security}"
 
 }
+module "consul_client" {
+source = "./modules/consul_client"
+
+ami = "${var.ami}"
+instance_type = "${var.instance_type}"
+key_name = "${var.key_name}"
+conn_user = "${var.conn_user}"
+keyPath = "${var.keyPath}"
+homeDir = "${var.homeDir}"
+
+subnet_id = "${module.security.public}"
+
+}

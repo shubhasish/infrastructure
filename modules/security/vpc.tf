@@ -105,20 +105,20 @@ resource "aws_security_group" "nat" {
     description = "Allow traffic to pass from the private subnet to the internet"
     
     ingress {
-        from_port = 80
-        to_port = 80
+        from_port = 0
+        to_port = 65355
         protocol = "tcp"
         cidr_blocks = ["${var.private_subnet_cidr}"]
     }
-    ingress {
-        from_port = 443
-        to_port = 443
+    /*ingress {
+        from_port = all
+        to_port = all
         protocol = "tcp"
         cidr_blocks = ["${var.private_subnet_cidr}"]
-    }
+    }*/
     ingress {
-        from_port = 22
-        to_port = 22
+        from_port = 0
+        to_port = 65355
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
@@ -130,20 +130,22 @@ resource "aws_security_group" "nat" {
     }
 
     egress {
-        from_port = 80
-        to_port = 80
+        from_port = -1
+        to_port = -1
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
+/*
     egress {
-        from_port = 443
-        to_port = 443
+        from_port = all
+        to_port = all
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
+*/
     egress {
-        from_port = 22
-        to_port = 22
+        from_port = -1
+        to_port = -1
         protocol = "tcp"
         cidr_blocks = ["${var.vpc_cidr}"]
     }
