@@ -1,0 +1,7 @@
+{
+"watches":[
+{"type":"checks",
+"state":"critical",
+"handler":"python checks.py"}]
+
+}

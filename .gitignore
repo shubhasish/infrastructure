@@ -1,0 +1,7 @@
+terraform.tfstate
+terraform.tfstate.backup
+*.tf.swp
+.terraform/*
+access_key.tf
+.terraform.tfstate.lock.info
+modules/security/vpc.tf_

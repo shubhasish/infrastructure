@@ -1,0 +1,7 @@
+var nodes = stream
+        |from()
+            .database('nodes')
+            .measurement('nodes')
+	|alert
+	    .crit(lambda: "new_nodes" != 'None')
+	    .message('{{ index .Fields "new_nodes" }} is {{ .Level}}')
